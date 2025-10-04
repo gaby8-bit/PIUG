@@ -1,0 +1,88 @@
+ .divsus {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+  
+}
+    .butonmod{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+    
+    }
+    .butonmod:hover{
+        background-color: grey;
+    }
+
+    .cauta{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+        float: right;
+        padding: 6px;
+        margin-right: 16px;
+        margin-top: 5px;
+        background-color: beige;
+        border:none;
+        border-radius: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        outline: none;
+        width: 250px;
+        transition: box-shadow 0.2s;
+    }
+    .cauta-div{
+        position: relative;
+        float:right
+    }
+    .cauta:focus{
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    .cauta-poza{
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        margin-left:-40px;
+        pointer-events: none;
+        border-radius: 35px;
+    }
+    .butonmeniu{
+       font-family: 'Times New Roman', Times, serif;
+       font-size: 20px;
+        color:grey;
+        background-color: black;
+        border-radius: 35px;
+     }
+     .butonmeniu:hover{
+       color: white;
+     }
+.textdupavideo {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: black;
+}
+    .semibold {
+    font-weight: 600;
+}
+    .divistoric{
+        vertical-align: baseline;
+        margin-top: 50px;
+    }
+
+    .divbutoane {
+    width: auto;
+    margin: 120px auto 0 auto; 
+    left: unset;
+    transform: unset;
+    text-align: center;
+    position: static;
+}
+
+.divvideo {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 40px;
+}
