@@ -1,13 +1,14 @@
  .divsus {
-    position: fixed;
     top: 0;
     width: 100%;
     overflow: hidden;
+    z-index: 10;
   
 }
     .butonmod{
         font-family: 'Times New Roman', Times, serif;
         font-size: 17px;
+        cursor: pointer;
     
     }
     .butonmod:hover{
@@ -53,9 +54,14 @@
         color:grey;
         background-color: black;
         border-radius: 35px;
+        cursor:pointer;
+        border:none;
+        padding: 10px 20px;
+        transition: background 0.2s, color 0.2s;
      }
      .butonmeniu:hover{
        color: white;
+       background-color: #333;
      }
 .textdupavideo {
     position: relative;
@@ -66,23 +72,29 @@
     .semibold {
     font-weight: 600;
 }
-    .divistoric{
-        vertical-align: baseline;
-        margin-top: 50px;
-    }
 
     .divbutoane {
     width: auto;
-    margin: 120px auto 0 auto; 
+    margin:10px auto 0 auto; 
     left: unset;
     transform: unset;
     text-align: center;
     position: static;
+    z-index: 1;
 }
 
 .divvideo {
     width: 100%;
-    height: auto;
+    height: 30%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 120px;
+}
+
+.divvideo video{
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 1200px; 
+    margin: 0 auto;  
+    
 }
