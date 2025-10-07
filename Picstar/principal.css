@@ -38,16 +38,26 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
     .cauta-poza{
-        position: absolute;
+        position: static;
         right: 16px;
         top: 50%;
         transform: translateY(-50%);
         width: 24px;
         height: 24px;
         margin-left:-40px;
-        pointer-events: none;
         border-radius: 35px;
     }
+    .cauta-btn {
+    position: absolute;
+    right: 8px;
+    top: 90%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;
+}
     .butonmeniu{
        font-family: 'Times New Roman', Times, serif;
        font-size: 20px;

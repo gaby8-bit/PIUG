@@ -4,6 +4,7 @@
 <title>Mercedes-Benz</title>
 <link rel="stylesheet" href="principal.css">
 <link rel="icon" type="image/jfif" href="logo.jfif">
+<script src="cautare.js"></script>
 </head>
 
 <body>
@@ -13,8 +14,8 @@
 <button class="butonmod"><img src="light_mode.png" width="86" height="61"></button>
 
 <div class="cauta-div">
-<input type="text" class="cauta" placeholder="Cauta...">
-<img src="lupa.png" class="cauta-poza" alt="icon">
+<input type="text" id="searchbar" oninput="searchbar()" class="cauta" placeholder="Cauta...">
+<button onclick="searchbar()" class="cauta-btn"><img src="lupa.png" class="cauta-poza" alt="icon"></button>
 
 </div>
 <div class="divbutoane">
