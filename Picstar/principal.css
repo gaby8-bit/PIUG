@@ -3,6 +3,9 @@
     width: 100%;
     overflow: hidden;
     z-index: 10;
+     background-color: #000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  padding: 10px 0;
   
 }
     .butonmod{
@@ -29,6 +32,7 @@
         outline: none;
         width: 250px;
         transition: box-shadow 0.2s;
+        max-width: 80%;
     }
     .cauta-div{
         position: relative;
@@ -70,7 +74,7 @@
         transition: background 0.2s, color 0.2s;
      }
      .butonmeniu:hover{
-       color: white;
+       color:white;
        background-color: #333;
      }
 .textdupavideo {
@@ -78,6 +82,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 30px;
     color: black;
+    font-size: 2rem; /* se adapteaza la dimensiunea ecranului */
 }
     .semibold {
     font-weight: 600;
@@ -108,3 +113,59 @@
     margin: 0 auto;  
     
 }
+/* 📱 Telefoane mici (max 480px) */
+@media (max-width: 480px) {
+  .butonmeniu {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+  }
+
+  .cauta {
+    width: 80%;
+    margin: 10px auto;
+    float: none;
+    display: block;
+  }
+
+  .divvideo {
+    margin-top: 60px;
+  }
+
+  .textdupavideo {
+    font-size: 1.2rem;
+  }
+}
+
+/* 📱 Tablete (max 768px) */
+@media (max-width: 768px) {
+  .butonmeniu {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+
+  .cauta {
+    width: 70%;
+  }
+
+  .textdupavideo {
+    font-size: 1.6rem;
+  }
+}
+
+body{
+    margin: 0;
+  background: linear-gradient(180deg, #f5f5f5, #e0e0e0);
+  font-family: 'Inter', sans-serif;
+  color: #111;
+}
+footer{
+
+background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.3);}
