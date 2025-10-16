@@ -3,7 +3,7 @@
     width: 100%;
     overflow: hidden;
     z-index: 10;
-     background-color: #000;
+     background-color: var(--bg-color);
   box-shadow: 0 3px 6px rgba(0,0,0,0.3);
   padding: 10px 0;
   
@@ -25,7 +25,7 @@
         padding: 6px;
         margin-right: 16px;
         margin-top: 5px;
-        background-color: beige;
+        background-color: var(--button-bg);
         border:none;
         border-radius: 30px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -39,7 +39,7 @@
         float:right
     }
     .cauta:focus{
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 12px rgba(165, 208, 7, 0.73);
     }
     .cauta-poza{
         position: static;
@@ -65,8 +65,8 @@
     .butonmeniu{
        font-family: 'Times New Roman', Times, serif;
        font-size: 20px;
-        color:grey;
-        background-color: black;
+        color:var(--bg-color);
+        background-color: var(--text-color);
         border-radius: 35px;
         cursor:pointer;
         border:none;
@@ -81,7 +81,7 @@
     position: relative;
     font-family: 'Inter', sans-serif;
     font-size: 30px;
-    color: black;
+    color: var(--text-color);
     font-size: 2rem; /* se adapteaza la dimensiunea ecranului */
 }
     .semibold {
@@ -159,7 +159,10 @@ body{
     margin: 0;
   background: linear-gradient(180deg, #f5f5f5, #e0e0e0);
   font-family: 'Inter', sans-serif;
-  color: #111;
+  color: var(--bg-color);
+   background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 footer{
 
@@ -169,3 +172,30 @@ background-color: #000;
   padding: 20px 10px;
   margin-top: 40px;
   box-shadow: 0 -3px 6px rgba(0,0,0,0.3);}
+
+  /* ===== TEME ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --button-bg: #e0e0e0;
+  --button-text: #000000;
+  --border-color: #000000;
+}
+
+.dark-mode {
+ --bg-color: #0d0d0d;
+  --text-color: #e5e5e5;
+  --button-bg: #1c1c1c;
+  --button-text: #ffffff;
+  --border-color: #999999;
+}
+/* Exemple — adaptează pentru elementele tale */
+nav, footer, .divsus, .divvideo, .footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.butonmeniu, .butonmod {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}

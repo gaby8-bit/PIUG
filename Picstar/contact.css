@@ -1,0 +1,159 @@
+/* === Root Variables for Theming === */
+:root {
+  --primary-color: #000000;
+  --accent-color: #0a66c2; /* Corporate blue (modern Mercedes site style) */
+  --accent-hover: #084d9d;
+  --background: #ffffff;
+  --text: #1f2937; /* Dark slate */
+  --text-muted: #6b7280;
+  --border: #d1d5db;
+  --input-bg: #f9fafb;
+  --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* === General Styles === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  background-color: #f3f4f6;
+  color: var(--text);
+}
+
+/* === Section === */
+.contact-section {
+  padding: 80px 20px;
+  background: var(--background);
+}
+
+.contact-section h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+/* === Container === */
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 48px 40px;
+  border-radius: 24px;
+  box-shadow: var(--box-shadow);
+}
+
+/* === Description Text === */
+.contact-container p {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+/* === Form === */
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--input-bg);
+  font-size: 15px;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(10, 102, 194, 0.1);
+  outline: none;
+}
+
+/* === Button === */
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* === Contact Info Section === */
+.contact-info {
+  margin-top: 50px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 40px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.contact-info p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+/* === Google Maps === */
+.harta {
+  margin-top: 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.harta iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 32px 24px;
+  }
+
+  .contact-section h1 {
+    font-size: 28px;
+  }
+
+  .contact-info {
+    padding-top: 30px;
+  }
+
+  .contact-info h2 {
+    font-size: 18px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+    padding: 14px;
+  }
+}
