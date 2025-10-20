@@ -179,7 +179,7 @@
   }
   .butonmod:hover{
     transform: scale(1.1);
-    color: var(--button-text);
+    color: var(--border-color);
   }
   .butonmod img{
     width: 30px;
