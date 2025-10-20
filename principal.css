@@ -9,9 +9,11 @@
   
 }
     .butonmod{
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 17px;
-        cursor: pointer;
+      background-color: var(--button-bg);
+       border-radius: 50%;
+       padding: 8px;
+       transition: transform 0.2s ease,background-color 0.2s ease;
+       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     
     }
     .butonmod img{
@@ -177,7 +179,7 @@
   }
   .butonmod:hover{
     transform: scale(1.1);
-    background-color: var(--text-color);
+    background-color: var(--bg-color);
   }
   .butonmod img{
     width: 30px;
