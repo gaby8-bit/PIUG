@@ -141,18 +141,69 @@
 
 /* 📱 Tablete (max 768px) */
 @media (max-width: 768px) {
-  .butonmeniu {
-    font-size: 18px;
-    padding: 10px 16px;
+  .divsus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+  }
+  .butonmod img{
+    width: 30px;
+    height: 30px;
+  }
+  .cauta-div{
+    display: flex;
+    width: 80%;
+    max-width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin:5px 0;
   }
 
-  .cauta {
-    width: 70%;
+  .cauta{
+    width:100%;
+    padding: 8px;
+    border-radius: 20px;
+    border:1px solid #aaa;
+    font-size: 14px;
+  }
+  .cauta-btn img{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
   }
 
-  .textdupavideo {
-    font-size: 1.6rem;
+  .divbutoane{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:8px;
+    width: 90%;
   }
+
+  .butonmeniu{
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    border:1px solid #000;
+    background-color: white;
+    font-size: 16px;
+  }
+
+  .butonmeniu:hover{
+    background-color: #f0f0f0;
+  }
+
+  .divvideo img{
+    width: 120px;
+    height: 120px;
+  }
+  video{
+    width: 100%;
+    border-radius: 10px;
+  } 
+
+  
 }
 
 body{
