@@ -14,6 +14,9 @@
         cursor: pointer;
     
     }
+    .butonmod img{
+      filter:invert(var(--icon-filter));
+    }
     .butonmod:hover{
         background-color: grey;
     }
@@ -62,6 +65,10 @@
     padding: 0;
     z-index: 2;
 }
+.cauta-btn img{
+  filter:invert(var(--icon-filter));
+}
+
     .butonmeniu{
        font-family: 'Times New Roman', Times, serif;
        font-size: 20px;
@@ -113,6 +120,14 @@
     margin: 0 auto;  
     
 }
+:root{
+    --icon-filter:0;
+  }
+
+  .dark-mode{
+    --icon-filter:1;
+  }
+
 /* 📱 Telefoane mici (max 480px) */
 @media (max-width: 480px) {
   .butonmeniu {
