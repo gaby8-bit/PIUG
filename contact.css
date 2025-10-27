@@ -1,159 +1,308 @@
-/* === Root Variables for Theming === */
+
+/* TEME */
+
 :root {
-  --primary-color: #000000;
-  --accent-color: #0a66c2; /* Corporate blue (modern Mercedes site style) */
-  --accent-hover: #084d9d;
-  --background: #ffffff;
-  --text: #1f2937; /* Dark slate */
-  --text-muted: #6b7280;
-  --border: #d1d5db;
-  --input-bg: #f9fafb;
-  --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-  --radius: 12px;
-  --transition: 0.3s ease;
+    /* CULORI DE BAZĂ */
+    --accent-color: #0a66c2; /* Blue */
+    --accent-hover: #084d9d;
+    --footer-bg: #000000;
+    --footer-text: #ffffff;
+    
+    /* VARIANTE TEMA LIGHT (Default) */
+    --page-bg: #f3f4f6; /* Fundal general al paginii */
+    --nav-bg: #ffffff; /* Fundal Navigatie (.divsus) */
+    --nav-shadow: rgba(0, 0, 0, 0.1);
+    
+    --content-bg: #ffffff; /* Fundal container contact (.contact-container) */
+    --text-primary: #1f2937; /* Text inchis */
+    --text-muted: #6b7280;
+    
+    --button-bg: #ffffff; /* Fundal buton meniu (varianta light) */
+    --button-text: #000000; /* Text buton meniu (varianta light) */
+
+    --border: #d1d5db;
+    --input-bg: #f9fafb;
+    
+    --icon-filter: 0; /* 0 = fara inversare (light mode) */
+    --transition: 0.3s ease;
+    --radius: 12px;
 }
 
-/* === General Styles === */
+
+/* DARK MODE (Suprascriere) */
+
+.dark-mode {
+    /* VARIANTE TEMA DARK */
+    --page-bg: #121212;
+    --nav-bg: #1f1f1f;
+    --nav-shadow: rgba(255, 255, 255, 0.1);
+    
+    --content-bg: #2a2a2a;
+    --text-primary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    
+    --button-bg: #1f1f1f;
+    --button-text: #e0e0e0;
+
+    --border: #505050;
+    --input-bg: #3c3c3c;
+    
+    --icon-filter: 1; /* 1 = inversare (dark mode) */
+}
+
+
+
+/* Stiluri generale */
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', 'Inter', sans-serif;
-  background-color: #f3f4f6;
-  color: var(--text);
+    margin: 0;
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    /* Aplica fundalul principal al paginii si culoarea textului */
+    background-color: var(--page-bg); 
+    color: var(--text-primary);
+    transition: background-color var(--transition), color var(--transition);
 }
 
-/* === Section === */
+/* Stilizarea containerului de sus (Navigatie) */
+.divsus {
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    /* Foloseste variabilele de navigare */
+    background-color: var(--nav-bg); 
+    box-shadow: 0 3px 6px var(--nav-shadow);
+    padding: 10px 0;
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+/* Footer (Negru standard, dar textul se adaptează ușor) */
+footer{
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.5); /* Umbra rămâne consistentă */
+}
+
+/* Stilizarea containerului de butoane */
+.divbutoane {
+    width: auto;
+    margin: 10px auto 0 auto; 
+    text-align: center;
+    position: static;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+/* Stilul general al butonului de meniu */
+.butonmeniu{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    /* Foloseste variabilele de buton (se inverseaza in dark mode) */
+    color: var(--button-text); 
+    background-color: var(--button-bg);
+    border-radius: 35px;
+    border:1px solid var(--button-text); /* Borderul ia culoarea textului */
+    cursor:pointer;
+    padding: 10px 20px;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.butonmeniu:hover{
+    color:white;
+    background-color: var(--accent-color); /* Hover-ul rămâne Accent Blue */
+    border-color: var(--accent-color);
+}
+
+/* Stiluri Butoane Dark/Light Mode */
+.butonmod{
+    background-color: transparent; /* Transparent pentru a arata Nav Background */
+    border-radius: 50%;
+    padding: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: none; /* Am scos shadow pentru curatenie */
+    border: none;
+    cursor: pointer;
+}
+.butonmod:hover{
+    transform: scale(1.1);
+    background-color: rgba(100, 100, 100, 0.1); /* Efect hover subtil */
+}
+
+.butonmod img{
+    width: 30px;
+    height: 30px;
+    /* CRUCIAL: Inversarea culorii imaginii in functie de tema */
+    filter: invert(var(--icon-filter)); 
+}
+
+
+
+/*PAGINA DE CONTACT */
+
+
+/* Section */
 .contact-section {
-  padding: 80px 20px;
-  background: var(--background);
+    padding: 80px 20px;
+    background: var(--page-bg); /* Se adaptează fundalului general */
 }
 
 .contact-section h1 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: var(--primary-color);
-  letter-spacing: -0.5px;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
 }
 
-/* === Container === */
+/* Container */
 .contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 48px 40px;
-  border-radius: 24px;
-  box-shadow: var(--box-shadow);
+    max-width: 800px;
+    margin: 0 auto;
+    /* Acum se adaptează la dark mode */
+    background: var(--content-bg); 
+    padding: 48px 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); /* Shadow poate ramane fix sau adaptat */
+    color: var(--text-primary);
 }
 
-/* === Description Text === */
+/* Description Text */
 .contact-container p {
-  text-align: center;
-  font-size: 16px;
-  color: var(--text-muted);
-  margin-bottom: 36px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 36px;
 }
 
-/* === Form === */
+/* Form */
 .contact-form label {
-  display: block;
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 6px;
-  color: var(--text);
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 14px 16px;
-  margin-bottom: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background-color: var(--input-bg);
-  font-size: 15px;
-  color: var(--text);
-  transition: var(--transition);
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    /* Se adaptează la dark mode */
+    border: 1px solid var(--border); 
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border-radius: var(--radius);
+    font-size: 15px;
+    transition: var(--transition);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 4px rgba(10, 102, 194, 0.1);
-  outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(10, 102, 194, 0.1);
+    outline: none;
 }
 
-/* === Button === */
+/* Button (Ramane corporate blue) */
 .contact-form button {
-  width: 100%;
-  padding: 16px;
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .contact-form button:hover {
-  background-color: var(--accent-hover);
-  transform: translateY(-2px);
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
-/* === Contact Info Section === */
+/* Contact Info Section */
 .contact-info {
-  margin-top: 50px;
-  border-top: 1px solid #e5e7eb;
-  padding-top: 40px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border); /* Se adapteaza la tema */
+    padding-top: 40px;
 }
 
 .contact-info h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
 }
 
 .contact-info p {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
 }
 
-/* === Google Maps === */
+/* Google Maps */
 .harta {
-  margin-top: 30px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .harta iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
+    width: 100%;
+    height: 300px;
+    border: none;
 }
 
-/* === Responsive === */
+
+/* Responsive */
+
+
+@media (max-width: 768px) {
+    .divbutoane {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 8px;
+        width: 90%;
+        margin-top: 20px; 
+    }
+
+    .butonmeniu {
+        width: 80%;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 600px) {
-  .contact-container {
-    padding: 32px 24px;
-  }
+    .contact-container {
+        padding: 32px 24px;
+    }
 
-  .contact-section h1 {
-    font-size: 28px;
-  }
+    .contact-section h1 {
+        font-size: 28px;
+    }
 
-  .contact-info {
-    padding-top: 30px;
-  }
+    .contact-info {
+        padding-top: 30px;
+    }
 
-  .contact-info h2 {
-    font-size: 18px;
-  }
+    .contact-info h2 {
+        font-size: 18px;
+    }
 
-  .contact-form button {
-    font-size: 15px;
-    padding: 14px;
-  }
+    .contact-form button {
+        font-size: 15px;
+        padding: 14px;
+    }
 }
