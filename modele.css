@@ -1,1 +1,58 @@
+:root {
+    /* CULORI DE BAZĂ */
+    --accent-color: #0a66c2; /* Blue */
+    --page-bg: #ffffff; /* White */
+    --text-primary: #000000; /* Black */
+    --text-secondary: #555555; /* Dark Gray */
+    
+    /* FONTURI */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* SPATIERE */
+    --padding: 16px;
+    --margin: 16px;
+    --radius: 12px;
+}
+.dark-mode {
+    /* CULORI DE BAZĂ DARK MODE */
+    --accent-color: #0a66c2; /* Blue */
+    --page-bg: #121212; /* Dark Background */
+    --text-primary: #e0e0e0; /* Light Gray */
+    --text-secondary: #aaaaaa; /* Medium Gray */
+}
+.titlu-modele{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: var(--text-primary);
+
+}
+.poze{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+/* Asigură vizibilitatea butoanelor caruselului (săgețile Previous/Next) */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1) grayscale(100%);
+    z-index: 100;
+    width: 15%;
+}
+.carousel-item {
+    position: relative; 
+}
+
+/* Poziționează butonul "Detalii" peste imaginea caruselului */
+.pozitie-detalii {
+    position: absolute;
+    bottom: 20px; /* Distanța de la baza imaginii */
+    left: 50%; /* Începe de la mijloc */
+    transform: translateX(-50%); /* Centrează perfect orizontal */
+    z-index: 10; /* Asigură că este deasupra imaginii */
+    /* Stiluri Bootstrap sunt deja aplicate prin clasa btn btn-primary */
+}
 
