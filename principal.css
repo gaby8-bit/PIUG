@@ -20,7 +20,8 @@
       filter:invert(var(--icon-filter));
     }
     .butonmod:hover{
-        background-color: grey;
+        background-color:#0a66c2;
+        
     }
 
     .cauta{
@@ -83,8 +84,8 @@
         transition: background 0.2s, color 0.2s;
      }
      .butonmeniu:hover{
-       color:white;
-       background-color: #333;
+       color: black;
+       background-color: #0a66c2;
      }
 .textdupavideo {
     position: relative;
@@ -179,7 +180,7 @@
   }
   .butonmod:hover{
     transform: scale(1.1);
-    background-color: #f0f0f0;
+    background-color: #0a66c2;
     color: var(--button-text);
   }
   .butonmod img{
@@ -234,7 +235,8 @@
   }
 
   .butonmeniu:hover{
-    background-color: #f0f0f0;
+    background-color: #0a66c2;
+    color:white;
   }
 
   .divvideo img{
@@ -268,7 +270,6 @@ body{
 }
 footer{
 
-background-color: #000;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -301,3 +302,4 @@ nav, footer, .divsus, .divvideo, .footer {
   color: var(--text-color);
   border: 1px solid var(--text-color);
 }
+

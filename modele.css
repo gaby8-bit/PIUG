@@ -55,4 +55,10 @@
     z-index: 10; /* Asigură că este deasupra imaginii */
     /* Stiluri Bootstrap sunt deja aplicate prin clasa btn btn-primary */
 }
-
+.descriere-mercedes {
+    background-color: var(--content-bg);
+    padding: 20px;
+    color: var(--text-primary);
+    text-align: center;
+    
+}
