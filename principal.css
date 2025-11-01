@@ -1,10 +1,10 @@
  .divsus {
-    top: 0;
-    width: 100%;
-    overflow: hidden;
-    z-index: 10;
-     background-color: var(--bg-color);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+   top: 0;
+   width: 100%;
+   overflow: hidden;
+   z-index: 10;
+    background-color: var(--bg-color);
+  box-shadow: none; /* eliminăm complet umbra pentru a evita benzi vizibile */
   padding: 10px 0;
   
 }
@@ -109,10 +109,12 @@
 }
 
 .divvideo {
-    width: 100%;
-    height: 30%;
-    text-align: center;
-    margin-top: 120px;
+  width: 100%;
+  height: auto; /* evitați înălțimi procentuale care pot crea spațiu gol */
+  text-align: center;
+  margin-top: 0; /* fără spațiu suplimentar */
+  background-color: var(--bg-color); /* asigură aceeași culoare ca footer/nav */
+  padding-bottom: 0;
 }
 
 .divvideo video{
@@ -121,7 +123,11 @@
     display: block;
     max-width: 1200px; 
     margin: 0 auto;  
-    
+    margin-bottom: 0; /* eliminăm margin-bottom implicit */
+}
+
+.divvideo p, .divvideo .textdupavideo {
+  margin-bottom: 0; /* eliminăm spații implicite ale paragrafelor */
 }
 :root{
     --icon-filter:0;
@@ -149,7 +155,7 @@
   }
 
   .divvideo {
-    margin-top: 60px;
+    margin-top: 0px;
   }
 
   .textdupavideo {
@@ -273,8 +279,10 @@ footer{
   color: white;
   text-align: center;
   padding: 20px 10px;
-  margin-top: 40px;
-  box-shadow: 0 -3px 6px rgba(0,0,0,0.3);}
+  margin-top: 0; /* eliminăm margin-top pentru a lipi footer de conținut */
+  box-shadow: none; /* fără umbră în sus */
+  background-color: var(--bg-color);
+}
 
   /* ===== TEME ===== */
 :root {
@@ -283,6 +291,9 @@ footer{
   --button-bg: #e0e0e0;
   --button-text: #000000;
   --border-color: #000000;
+  --content-bg: #ffffff; /* background pentru containere / carduri în mod normal */
+  --content-border: 1px solid rgba(0,0,0,0.06);
+  --content-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
 .dark-mode {
@@ -291,6 +302,25 @@ footer{
   --button-bg: #1c1c1c;
   --button-text: #ffffff;
   --border-color: #999999;
+  --content-bg: #161616; /* background pentru containere / carduri în dark mode */
+  --content-border: 1px solid rgba(255,255,255,0.04);
+  --content-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Stil pentru containere specifice care ar trebui să-și schimbe background-ul în dark mode */
+.container.custom-bg {
+  background-color: var(--content-bg);
+  color: var(--text-color);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px; /* menținem containerul centrat și limitat pe ecrane mari */
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: var(--content-border);
+  box-shadow: var(--content-shadow);
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  background-clip: padding-box; /* prevenim overflow vizual cu border-radius */
 }
 /* Exemple — adaptează pentru elementele tale */
 nav, footer, .divsus, .divvideo, .footer {

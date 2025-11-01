@@ -4,7 +4,7 @@
     --page-bg: #ffffff; /* White */
     --text-primary: #000000; /* Black */
     --text-secondary: #555555; /* Dark Gray */
-    
+    --icon-filter:invert(0);
     /* FONTURI */
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
@@ -19,13 +19,16 @@
     --page-bg: #121212; /* Dark Background */
     --text-primary: #e0e0e0; /* Light Gray */
     --text-secondary: #aaaaaa; /* Medium Gray */
+    --icon-filter:invert(1);
 }
 .titlu-modele{
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-size: 32px;
     color: var(--text-primary);
+    background-color: var(--page-bg);
 
 }
 .poze{
@@ -35,13 +38,60 @@
     margin-bottom: 40px;
 }
 
-/* Asigură vizibilitatea butoanelor caruselului (săgețile Previous/Next) */
+/* Carousel controls use currentColor so they follow the theme (light/dark) */
 .carousel-control-prev,
 .carousel-control-next {
-    filter: invert(1) grayscale(100%);
-    z-index: 100;
-    width: 15%;
+    color: var(--text-primary);
+    transition: color .15s ease;
 }
+
+/* Use inline SVGs that respect currentColor so icons are visible on any background */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: none; /* avoid any invert/filter that hides icons */
+    /* SVG uses fill='currentColor' so the icon color follows the parent's color */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/></svg>");
+}
+
+/* Flip for the "next" icon so we can reuse the same SVG */
+.carousel-control-next-icon {
+    transform: rotate(180deg);
+}
+
+/* Stronger overrides: Bootstrap is loaded after local CSS in your HTML, so use
+   !important here to ensure our themed SVG (currentColor) is used in all modes. */
+.carousel-control-prev,
+.carousel-control-next {
+    color: var(--text-primary) !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    /* same SVG as above, but enforced with !important so Bootstrap cannot override */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/></svg>") !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    display: inline-block !important;
+    filter: none !important;
+    /* Ensure the SVG's currentColor uses the intended theme color */
+    color: var(--text-primary) !important;
+}
+
+.carousel-control-next-icon {
+    transform: rotate(180deg) !important;
+}
+
+
+
+
 .carousel-item {
     position: relative; 
 }
@@ -57,8 +107,76 @@
 }
 .descriere-mercedes {
     background-color: var(--content-bg);
-    padding: 20px;
+    padding: 0px;
     color: var(--text-primary);
     text-align: center;
     
+}
+
+.container.my-5.custom-bg{
+    background-color: var(--content-bg);
+    box-sizing: border-box; /* asigură padding inclus în lățime */
+}
+
+.modal-body {
+    background-color: var(--content-bg);
+    color: var(--text-primary);
+}
+.modal-header {
+    background-color: var(--content-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+.modal-footer {
+    background-color: var(--content-bg);
+    border-color: var(--border-color);
+}
+
+.modal-content {
+    background-color: var(--content-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-close {
+    filter: var(--icon-filter);
+}
+
+.modal .btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+}
+.modal .btn:hover {
+    background-color: #0855a1;
+}
+
+/* Ensure modal footer stays themed */
+.modal .modal-footer {
+    background-color: var(--content-bg) !important;
+    border-top: 1px solid var(--border-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    /* default (light mode): black arrows */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/></svg>") !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    display: inline-block !important;
+    filter: none !important;
+}
+
+/* Dark-mode explicit: white arrows */
+.dark-mode .carousel-control-prev-icon,
+.dark-mode .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/></svg>") !important;
+}
+
+/* Make sure next icon is flipped (keep !important) */
+.carousel-control-next-icon {
+    transform: rotate(180deg) !important;
 }
