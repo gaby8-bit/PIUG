@@ -140,9 +140,9 @@
 /* 📱 Telefoane mici (max 480px) */
 @media (max-width: 480px) {
   .butonmeniu {
-    font-size: 16px;
-    padding: 8px 16px;
-    margin-bottom: 8px;
+    font-size: 14px;
+    padding: 6px 12px;
+    margin:0;
     display: block;
     width: 100%;
   }
@@ -160,6 +160,10 @@
 
   .textdupavideo {
     font-size: 1.2rem;
+  }
+  .divbutoane {
+    flex-wrap: wrap;
+    gap: 6px;
   }
 }
 
@@ -220,14 +224,16 @@
 
   .divbutoane{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;/*sa stea pe aceeasi linie*/
+    flex-wrap: wrap; /*previne depasirea liniei */
     align-items: center;
+    justify-content: center;
     gap:8px;
     width: 90%;
   }
 
   .butonmeniu{
-    width: 80%;
+    width: auto;
     padding: 10px 20px;
     border-radius: 25px;
     border:1px solid #000;
