@@ -16,6 +16,16 @@
     --margin: 16px;
     --radius: 12px;
 }
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .dark-mode {
     /* CULORI DE BAZĂ DARK MODE */
     --accent-color: #0a66c2; /* Blue */
@@ -30,15 +40,16 @@
 
 .divbaza{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 8px;
     background-color: var(--page-bg);
+    padding: 0 5%;
 }
 
 .divpoza {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
+    grid-column: 1/2;
+    grid-row: 1/2;
     grid-column-start: 2;
     grid-row-start: 1;
     position: relative;
@@ -51,40 +62,68 @@
     object-fit: cover;
 }
 .divmotive {
-    grid-column: span 3 / span 3;
-    grid-column-start: 2;
-    grid-row-start: 3;
-    background-color: var(--page-bg);
-    position: relative;
+position: absolute; 
+    
+ 
+    top: 90%; /* Ajustează această valoare pentru a-l potrivi sub text */
+    left: 8%; /* Aliniază-l cu textul din stânga */
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 15px,10px;
+    
+    flex-direction: row; 
+    flex-wrap: wrap; /* Permite butoanelor să treacă pe rândul următor dacă nu încap */
+    
+    background-color: transparent; 
+    
+    gap: 10px; /* Spațiu între butoane */
+    z-index: 10;
+      animation: fadeSlideUp 1s ease-out both;
+
 }
 
 .divservicii {
-    grid-column: span 3 / span 3;
+    grid-column: 1/2;
     grid-row: span 2 / span 2;
     grid-column-start: 2;
-    grid-row-start: 4;
+    grid-row-start: 3;
     background-color: var(--page-bg);
+    padding: 40px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* spațiu între secțiuni */
 }
 
-.divlateralstanga {
-    grid-row: span 5 / span 5;
-    grid-column-start: 1;
-    grid-row-start: 1;
-    background-color:var(--lateral-color) ;
+.serviciu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.serviciu img {
+    width: 45%;
+    height: auto;
+    border-radius: var(--radius);
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.text-serviciu {
+    flex: 1;
+    color: var(--text-primary);
 }
 
-.divlateraldreapta {
-    grid-row: span 5 / span 5;
-    grid-column-start: 5;
-    grid-row-start: 1;
-    background-color:var(--lateral-color) ;
+.text-serviciu h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
+
+.text-serviciu p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 
 .text-suprapus{
     position: absolute;
@@ -124,38 +163,46 @@
 
 /* Stiluri pentru ecrane mici */
 @media (max-width: 600px) {
-    .text-suprapus h1 {
-        font-size: 24px; /* Redu mărimea titlului pe mobil */
+  .text-suprapus {
+    top: 35%;
+    left: 5%;
+    width: 80%;
+  }
+
+  .text-suprapus h1 {
+    font-size: 30px;
+  }
+
+  .text-suprapus p {
+    font-size: 30px;
+  }
+
+  .divmotive {
+    top: 60%; /* se mută mai sus pe imagine */
+    left: 5%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 90%;
+    gap: 5px;
+  }
+
+  .motive {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+  .serviciu {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .text-suprapus p {
-        font-size: 14px; /* Redu mărimea paragrafului */
-    }
-    
-    /* Ajustează și poziția orizontală, dacă este necesar */
-    .text-suprapus {
-        left: 10px; 
-    }
-    .divmotive {
-        gap: 8px; /* Redu spațiul */
+    .serviciu img {
+        width: 100%;
     }
 
- .motive { 
-    min-width: 56px; 
-    max-width: 120px; 
-    padding: 5px 8px; 
-    font-size: 10px; }
-
+    .text-serviciu {
+        width: 100%;
+    }
 }
 
-@media (max-width: 480px) {
-    .divmotive {
-        padding: 15px 5px;
-        gap: 6px;
-    }
-    .motive {
-        padding: 6px 12px;
-        font-size: 1opx;
-    }
-}
+
 
