@@ -18,6 +18,8 @@
     }
     .butonmod img{
       filter:invert(var(--icon-filter));
+      width: 86px;
+      height: 61px;
     }
     .butonmod:hover{
         background-color:#0a66c2;
@@ -164,6 +166,10 @@
   .divbutoane {
     flex-wrap: wrap;
     gap: 6px;
+  }
+  .butonmod img{
+    width: 60px;
+    height: 40px;
   }
 }
 

@@ -204,5 +204,50 @@ position: absolute;
     }
 }
 
+.butonhelp{
+  width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Face containerul rotund */
+    overflow: hidden; /* Taie orice depășește limitele containerului */
+    display: flex; /* Ajută la centrarea imaginii */
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Asigură-te că nu există padding */
+    border: none;
+    background-color: transparent;
+    
+}
 
+.butonhelp:hover
+{
+    cursor: pointer;
+  
+}
+.hidden {
+    display: none; 
+}
 
+/* Stiluri pentru buton */
+#toggleButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Stiluri pentru textarea */
+#infoTextarea {
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; 
+    background-color: #f8f8f8; /* Fundal pentru a indica că este readonly */
+    color: #333; /* Culoarea textului să nu fie estompată */
+}
