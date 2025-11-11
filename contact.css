@@ -86,44 +86,6 @@ footer{
     box-shadow: 0 -3px 6px rgba(0,0,0,0.5); /* Umbra rămâne consistentă */
 }
 
-/* Stilizarea containerului de butoane */
-.divbutoane {
-    width: auto;
-    margin: 10px auto 0 auto; 
-    text-align: center;
-    position: static;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    gap: 15px; 
-}
-
-/* Stilul general al butonului de meniu */
-.butonmeniu{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    /* Foloseste variabilele de buton (se inverseaza in dark mode) */
-    color: var(--button-text); 
-    background-color: var(--button-bg);
-    border-radius: 35px;
-    border:1px solid var(--button-text); /* Borderul ia culoarea textului */
-    cursor:pointer;
-    padding: 10px 20px;
-    transition: background var(--transition), color var(--transition), border-color var(--transition);
-}
-
-.butonmeniu:hover{
-    color:white;
-    background-color: var(--accent-color); /* Hover-ul rămâne Accent Blue */
-    border-color: var(--accent-color);
-}
-
-/* Stiluri Butoane Dark/Light Mode */
-
-
-
-
-/*PAGINA DE CONTACT */
 
 
 /* Section */
@@ -246,24 +208,7 @@ footer{
 /* Responsive */
 
 
-@media (max-width: 768px) {
-    .divbutoane {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        gap: 8px;
-        width: 90%;
-        margin-top: 20px; 
-    }
 
-    .butonmeniu {
-        width: 80%;
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-size: 16px;
-        max-width: 300px;
-    }
-}
 
 @media (max-width: 600px) {
     .contact-container {
