@@ -119,26 +119,7 @@ footer{
 }
 
 /* Stiluri Butoane Dark/Light Mode */
-.butonmod{
-    background-color: transparent; /* Transparent pentru a arata Nav Background */
-    border-radius: 50%;
-    padding: 8px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    box-shadow: none; /* Am scos shadow pentru curatenie */
-    border: none;
-    cursor: pointer;
-}
-.butonmod:hover{
-    transform: scale(1.1);
-    background-color: rgba(100, 100, 100, 0.1); /* Efect hover subtil */
-}
 
-.butonmod img{
-    width: 30px;
-    height: 30px;
-    /* CRUCIAL: Inversarea culorii imaginii in functie de tema */
-    filter: invert(var(--icon-filter)); 
-}
 
 
 
