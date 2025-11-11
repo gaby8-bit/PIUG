@@ -178,11 +178,11 @@ position: absolute;
   }
 
   .text-suprapus h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .text-suprapus p {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .divmotive {
@@ -209,6 +209,11 @@ position: absolute;
 
     .text-serviciu {
         width: 100%;
+    }
+    .btn.btn-primary pozitie-detalii{
+        width: 20px;
+        height: 20px;
+        
     }
 }
 
@@ -246,19 +251,7 @@ position: absolute;
     border-radius: 5px;
 }
 
-/* Stiluri pentru textarea */
-#infoTextarea {
-    width: 100%;
-    max-width: 500px;
-    height: 150px;
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none; 
-    background-color: #f8f8f8; /* Fundal pentru a indica că este readonly */
-    color: #333; /* Culoarea textului să nu fie estompată */
-}
+
 
 .container.my-5.custom-bg{
     background-color: var(--content-bg);
@@ -275,8 +268,8 @@ position: absolute;
     border-color: var(--border-color);
 }
 .modal-footer {
-    background-color: var(--content-bg);
-    border-color: var(--border-color);
+    background-color: var(--content-bg) !important;
+    border-color: var(--border-color) !important;
 }
 
 .modal-content {
@@ -295,4 +288,7 @@ position: absolute;
     border:none;
     outline: none !important;
     box-shadow: none !important; 
+}
+.btn.btn-primary.pozitie-detalii:hover{
+    background-color: var(--accent-color);
 }
