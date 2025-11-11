@@ -163,6 +163,14 @@ position: absolute;
 
 /* Stiluri pentru ecrane mici */
 @media (max-width: 600px) {
+#afiseaza_info {
+        /* Peste 90% din cazuri, setarea acestor proprietăți rezolvă suprapunerea pe mobil. */
+        position: fixed; 
+        right: 15px; 
+        bottom: 15px;
+        z-index: 9999; 
+    }
+   
   .text-suprapus {
     top: 35%;
     left: 5%;
@@ -250,4 +258,41 @@ position: absolute;
     resize: none; 
     background-color: #f8f8f8; /* Fundal pentru a indica că este readonly */
     color: #333; /* Culoarea textului să nu fie estompată */
+}
+
+.container.my-5.custom-bg{
+    background-color: var(--content-bg);
+    box-sizing: border-box; /* asigură padding inclus în lățime */
+}
+
+.modal-body {
+    background-color: var(--content-bg);
+    color: var(--text-primary);
+}
+.modal-header {
+    background-color: var(--content-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+.modal-footer {
+    background-color: var(--content-bg);
+    border-color: var(--border-color);
+}
+
+.modal-content {
+    background-color: var(--content-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn.btn-primary.pozitie-detalii, 
+.btn.btn-primary.pozitie-detalii:focus,
+.btn.btn-primary.pozitie-detalii:focus-visible,
+.btn.btn-primary.pozitie-detalii:hover {
+   
+    filter: var(--icon-filter);
+    background-color: var(--page-bg);
+    border:none;
+    outline: none !important;
+    box-shadow: none !important; 
 }
