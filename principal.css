@@ -334,7 +334,7 @@ footer{
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   background-clip: padding-box; /* prevenim overflow vizual cu border-radius */
 }
-/* Exemple — adaptează pentru elementele tale */
+
 nav, footer, .divsus, .divvideo, .footer {
   background-color: var(--bg-color);
   color: var(--text-color);
