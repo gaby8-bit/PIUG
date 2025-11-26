@@ -345,3 +345,34 @@ nav, footer, .divsus, .divvideo, .footer {
   border: 1px solid var(--text-color);
 }
 
+/* Asigurăm că pagina ocupă tot ecranul și footer-ul stă jos */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Înălțime minimă cât tot ecranul */
+    margin: 0;
+}
+
+/* Conținutul principal (containerul) trebuie să se extindă */
+.container.custom-bg, .container {
+    flex: 1; /* Împinge footer-ul în jos dacă e puțin conținut */
+    width: 95%; /* Pe mobil să nu fie lipit de margini */
+    max-width: 1200px;
+    margin: 20px auto; /* Centrat */
+}
+
+/* Reparăm culorile footer-ului */
+footer {
+    width: 100%;
+    background-color: var(--bg-color) !important; /* Forțăm culoarea temei */
+    color: var(--text-color) !important;
+    padding: 20px 0;
+    margin-top: auto; /* Cheia pentru a sta lipit jos */
+}
+
+/* Asigurăm-ne că div-ul din interiorul footer-ului nu are fundal conflictual */
+.footer {
+    background-color: transparent !important; 
+    color: inherit; /* Preia culoarea textului din părinte */
+}
+
