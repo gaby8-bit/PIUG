@@ -160,6 +160,9 @@ position: absolute;
     color: var(--text-primary);
        
      }
+     .motive:hover{
+        cursor:default;
+        }
 
 /* Stiluri pentru ecrane mici */
 @media (max-width: 600px) {
