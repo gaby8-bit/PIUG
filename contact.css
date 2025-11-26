@@ -213,10 +213,12 @@ footer{
 @media (max-width: 600px) {
     .contact-container {
         padding: 32px 24px;
+        color:var(--text-primary);
     }
 
     .contact-section h1 {
         font-size: 28px;
+        color:var(--text-primary)
     }
 
     .contact-info {
@@ -225,10 +227,13 @@ footer{
 
     .contact-info h2 {
         font-size: 18px;
+        color:var(--text-primary);
     }
 
     .contact-form button {
         font-size: 15px;
         padding: 14px;
+        background-color: var(--accent-color);
+        border-radius: var(--radius);
     }
 }
